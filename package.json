@@ -1,0 +1,26 @@
+{
+  "name": "minerva-dashboard-api",
+  "version": "1.0.0",
+  "description": "Dashboard API for Rackspace Intelligence",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rackspace-Segment-Support/minerva-dashboard-api.git"
+  },
+  "author": "Kyle Jennings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://jira.rax.io/secure/RapidBoard.jspa?projectKey=MNRVA&rapidView=3462&view=planning"
+  },
+  "homepage": "https://github.com/Rackspace-Segment-Support/minerva-dashboard-api#readme",
+  "dependencies": {
+    "express": "4.16.4",
+    "gulp": "4.0.0",
+    "mysql2": "1.6.4",
+    "sequelize": "4.42.0",
+    "sequelize-cli": "5.4.0"
+  }
+}
