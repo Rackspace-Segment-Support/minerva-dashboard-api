@@ -4,6 +4,10 @@
   "description": "Dashboard API for Rackspace Intelligence",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "db:sync": "node src/app.js --sync",
+    "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "db:create": "./node_modules/.bin/sequelize db:create",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +21,7 @@
   },
   "homepage": "https://github.com/Rackspace-Segment-Support/minerva-dashboard-api#readme",
   "dependencies": {
+    "commander": "2.19.0",
     "express": "4.16.4",
     "gulp": "4.0.0",
     "mysql2": "1.6.4",
