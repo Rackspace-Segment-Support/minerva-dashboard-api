@@ -76,7 +76,14 @@ const component = function (db) {
 
             db.component.create({name: req.body.name, description: req.body.description})
                 .then((component) => {
-                    res.status(201).send('created.');
+                    var item = {
+                        id: component.id,
+                        name: component.name,
+                        description: component.description,
+                        createdAt: component.createdAt,
+                        updatedAt: component.updatedAt
+                    };
+                    res.status(201).json(item);
                 }).catch((error) => {
                     res.status(500).send(error);
                 })
@@ -104,8 +111,15 @@ const component = function (db) {
 
                 component.name = req.body.name;
                 component.description = req.body.description;
-                component.save().then(() => {
-                    res.status(202).send('updated');
+                component.save().then((component) => {
+                    var item = {
+                        id: component.id,
+                        name: component.name,
+                        description: component.description,
+                        createdAt: component.createdAt,
+                        updatedAt: component.updatedAt
+                    };
+                    res.status(202).json(item);
                 }).catch((error) => {
                     res.status(500).send(error);
                 });
@@ -133,8 +147,15 @@ const component = function (db) {
                 }
 
                 component.setDashboards([req.params.dashboardId])
-                    .then((c) => {
-                        res.status(202).send('updated');
+                    .then((component) => {
+                        var item = {
+                            id: component.id,
+                            name: component.name,
+                            description: component.description,
+                            createdAt: component.createdAt,
+                            updatedAt: component.updatedAt
+                        };
+                        res.status(202).json(item);
                     }).catch((error) => {
                         res.status(500).send(error);
                     });

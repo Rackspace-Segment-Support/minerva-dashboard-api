@@ -100,7 +100,15 @@ const dashboard = function(db) {
 
             db.dashboard.create({name: req.body.name, description: req.body.description, userId: req.body.userId})
                 .then((dashboard) => {
-                    res.status(201).send('created.');
+                    var item = {
+                        id: dashboard.id,
+                        name: dashboard.name,
+                        userId: dashboard.userId,
+                        description: dashboard.description,
+                        createdAt: dashboard.createdAt,
+                        updatedAt: dashboard.updatedAt
+                    };
+                    res.status(201).json(item);
                 }).catch((error) => {
                     res.status(500).send(error);
                 })
@@ -129,8 +137,16 @@ const dashboard = function(db) {
                 dashboard.name = req.body.name;
                 dashboard.description = req.body.description;
                 dashboard.userId = req.body.userId;
-                dashboard.save().then(() => {
-                    res.status(202).send('updated');
+                dashboard.save().then((dashboard) => {
+                    var item = {
+                        id: dashboard.id,
+                        name: dashboard.name,
+                        userId: dashboard.userId,
+                        description: dashboard.description,
+                        createdAt: dashboard.createdAt,
+                        updatedAt: dashboard.updatedAt
+                    };
+                    res.status(202).json(item);
                 }).catch((error) => {
                     res.status(500).send(error);
                 });
