@@ -1,4 +1,4 @@
-module.exports = {
+{
   "development": {
     "username": "dev",
     "password": "pass",
@@ -24,4 +24,4 @@ module.exports = {
     "dialect": "mysql",
     "operatorsAliases": false
   }
-};
+}
