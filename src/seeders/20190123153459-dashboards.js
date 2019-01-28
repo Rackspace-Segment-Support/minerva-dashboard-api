@@ -7,13 +7,12 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
      */
       
-      return queryInterface.bulkInsert('dashboard', [{
+      return queryInterface.bulkInsert('Dashboards', [{
         name: 'test dashboard',
         description: 'a test dashboard',
-        userId: '123456'
-      }], {}).bulkInsert('component', [{
-        name: 'test component',
-        description: 'a test component'
+        userId: '123456',
+        createdAt: '2019-01-25 18:37:12',
+        updatedAt: '2019-01-25 18:37:12'
       }], {});
    
   },
@@ -24,8 +23,8 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
     */
 
-      return queryInterface.bulkDelete('Dashboard', null, {})
-        .bulkDelete('component', null, {});
+      return queryInterface.bulkDelete('Dashboards', null, {})
+        .bulkDelete('Dashboards', null, {});
     
   }
 };
