@@ -8,19 +8,22 @@
  * @requires './models/index' Data access layer entry point
  * @requires express API framework
  * @requires body-parser middleware for parsing request bodies
+ * @requires helmet api security framework
  */
 
 const args = require('./arguments');
 const db = require('./models/index');
 const express = require('express');
 const router =  require('./router');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const helmet = require('helmet')
 
 const app = express();
 const port = args.port;
 const host = args.address;
 
 app.use(bodyParser.json());
+app.use(helmet());
 
 // if we want to sync the database
 // there will be a process arg passed via the CLI
