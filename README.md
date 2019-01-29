@@ -31,6 +31,14 @@ with that setup you will be able to start scaffolding the database.
 > npm run db:sync
 ```
 
+Environment Variables that you will need to setup
+
+```
+export IDENTITY_URL=<identity URL>
+```
+
+NOTE: any URLs should end with a `/`
+
 Now you will be able to run the application 
 
 ```

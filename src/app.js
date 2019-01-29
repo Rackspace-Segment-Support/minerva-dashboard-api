@@ -16,7 +16,8 @@ const db = require('./models/index');
 const express = require('express');
 const router =  require('./router');
 const bodyParser = require('body-parser');
-const helmet = require('helmet')
+const helmet = require('helmet');
+const auth = require('./middleware/authentication');
 
 const app = express();
 const port = args.port;
@@ -24,6 +25,7 @@ const host = args.address;
 
 app.use(bodyParser.json());
 app.use(helmet());
+app.use(auth());
 
 // if we want to sync the database
 // there will be a process arg passed via the CLI
