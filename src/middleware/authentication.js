@@ -30,6 +30,7 @@ module.exports = () => {
                 next();
             })
             .catch((err) => {
+                console.log('unauthorized request', token);
                 res.status(401).send('Unauthorized');
                 return;
             });
