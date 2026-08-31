@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Rackspace-Segment-Support/minerva-dashboard-api#readme",
   "dependencies": {
     "commander": "2.19.0",
-    "express": "4.16.4",
+    "express": "4.22.2",
     "gulp": "4.0.0",
     "helmet": "3.15.0",
     "mysql2": "1.6.4",
